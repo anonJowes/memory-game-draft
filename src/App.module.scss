@@ -1,0 +1,51 @@
+@import './styles/variables.scss';
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  text-align: center;
+
+  @media (max-width: $mobile) {
+    padding: $spacing-md;
+  }
+
+  h1 {
+    color: $primary-color;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: $spacing-lg;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+  }
+}
+
+.gameBoardContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.controlsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  min-width: 200px;
+}
+
+.winMessage {
+  margin-top: $spacing-sm;
+  font-size: 1.5rem;
+  color: #2d5a27; // darker green
+  font-weight: bold;
+}

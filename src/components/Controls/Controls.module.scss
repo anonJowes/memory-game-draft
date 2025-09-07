@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: $spacing-md 0;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.moves {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $text-color;
+}
+
+.bestScore {
+  font-size: 1rem;
+  color: #2d5a27; // darker green
+}
+
+.restartButton {
+  @include button-style;
+}

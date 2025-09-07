@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.difficultySelector {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin: $spacing-md 0;
+
+  label {
+    font-weight: bold;
+    color: $text-color;
+  }
+
+  select {
+    padding: $spacing-xs $spacing-sm;
+    border: 1px solid $card-back-color;
+    border-radius: 4px;
+    background-color: $card-front-color;
+    color: $text-color;
+    font-family: $font-family;
+    font-size: $font-size-base;
+  }
+}

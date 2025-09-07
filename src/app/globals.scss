@@ -1,0 +1,38 @@
+@import '../styles/variables.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $text-color;
+  background-color: $secondary-color;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  @include button-style;
+}
+
+h1, h2, h3 {
+  margin-bottom: $spacing-md;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+// Responsive
+@media (max-width: $mobile) {
+  body {
+    font-size: 14px;
+  }
+}

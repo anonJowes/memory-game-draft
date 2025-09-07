@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: $card-back-color;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 8px;
+  border: 2px solid $primary-color;
+  box-shadow: $card-shadow;
+  margin: $spacing-sm 0;
+}

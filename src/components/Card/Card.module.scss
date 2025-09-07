@@ -1,0 +1,161 @@
+@import '../../styles/variables.scss';
+
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 5px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.easy {
+    width: 120px;
+    height: 120px;
+
+    @media (max-width: $mobile) {
+      width: 90px;
+      height: 90px;
+      margin: 3px;
+    }
+
+    @media (max-width: $tablet) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &.medium {
+    width: 100px;
+    height: 100px;
+
+    @media (max-width: $mobile) {
+      width: 70px;
+      height: 70px;
+      margin: 3px;
+    }
+
+    @media (max-width: $tablet) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &.hard {
+    width: 80px;
+    height: 80px;
+
+    @media (max-width: $mobile) {
+      width: 60px;
+      height: 60px;
+      margin: 2px;
+    }
+
+    @media (max-width: $tablet) {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardBack,
+.cardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  @include flex-center;
+  font-weight: bold;
+  box-shadow: $card-shadow;
+}
+
+.card.easy .cardBack,
+.card.easy .cardFront {
+  font-size: 48px;
+
+  @media (max-width: $mobile) {
+    font-size: 36px;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 42px;
+  }
+}
+
+.card.medium .cardBack,
+.card.medium .cardFront {
+  font-size: 36px;
+
+  @media (max-width: $mobile) {
+    font-size: 28px;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 32px;
+  }
+}
+
+.card.hard .cardBack,
+.card.hard .cardFront {
+  font-size: 28px;
+
+  @media (max-width: $mobile) {
+    font-size: 20px;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 24px;
+  }
+}
+
+.cardBack {
+  background: $card-back-color;
+  color: white;
+}
+
+.cardFront {
+  background-color: $card-front-color;
+  color: $text-color;
+  transform: rotateY(180deg);
+  border: 3px solid $primary-color;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+@media (max-width: $mobile) {
+  .cardBack,
+  .cardFront {
+    font-size: 28px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .cardBack,
+  .cardFront {
+    font-size: 32px;
+  }
+}
