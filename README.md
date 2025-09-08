@@ -1,6 +1,6 @@
 # Memory Game
 
-A fun and interactive memory card-matching game built with React 18, TypeScript, SCSS Modules, and Next.js (Pages Router).
+A fun and interactive memory card-matching game built with React 18, TypeScript, SCSS Modules, and Next.js (App Router).
 
 ## Features
 
@@ -19,7 +19,7 @@ A fun and interactive memory card-matching game built with React 18, TypeScript,
 
 - **Frontend**: React 18 with TypeScript
 - **Styling**: SCSS Modules with variables and mixins
-- **Bundler**: Next.js (Pages Router)
+- **Bundler**: Next.js (App Router)
 - **State Management**: React hooks (useState, useEffect)
 - **Utilities**: Custom hooks, shuffle function
 
@@ -28,6 +28,10 @@ A fun and interactive memory card-matching game built with React 18, TypeScript,
 ```
 memory-game/
 ├── src/
+│   ├── app/
+│   │   ├── globals.scss
+│   │   ├── layout.tsx
+│   │   └── page.tsx
 │   ├── components/
 │   │   ├── Card/
 │   │   ├── GameBoard/
@@ -35,20 +39,28 @@ memory-game/
 │   │   ├── DifficultySelector/
 │   │   └── Timer/
 │   ├── hooks/
+│   │   ├── useSound.ts
 │   │   └── useTimer.ts
 │   ├── types/
-│   │   └── game.ts
+│   │   ├── game.ts
+│   │   ├── global.d.ts
+│   │   ├── index.ts
+│   │   └── window.ts
 │   ├── utils/
 │   │   └── shuffle.ts
 │   ├── styles/
 │   │   ├── variables.scss
 │   │   └── globals.scss
-│   ├── pages/
-│   │   ├── index.tsx
-│   │   └── _app.tsx
 │   ├── App.tsx
 │   └── App.module.scss
 ├── public/
+│   ├── images/
+│   ├── sounds/
+│   └── favicon.svg
+├── TODO.md
+├── eslint.config.mjs
+├── next.config.ts
+├── postcss.config.mjs
 ├── package.json
 ├── tsconfig.json
 └── README.md
@@ -91,8 +103,9 @@ memory-game/
 
 ## Accessibility
 
-- Use Tab to navigate between cards and controls.
+- Use Tab or Arrow keys (Up, Down, Left, Right) to navigate between cards.
 - Press Enter or Space to flip a card.
+- A visible border highlights the currently focused card for keyboard users.
 - Screen readers will announce moves, time, and game status.
 
 ## Deployment
