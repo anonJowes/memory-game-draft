@@ -45,6 +45,12 @@ $desktop: 1024px;
   cursor: pointer;
   font-family: $font-family;
   font-size: $font-size-base;
+  height: 40px; /* Consistent height for all buttons */
+  min-width: 120px; /* Increased minimum width for longer text */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Prevent text wrapping */
   transition: background-color 0.3s;
 
   &:hover {

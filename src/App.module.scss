@@ -12,7 +12,7 @@
 
   h1 {
     color: $primary-color;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-sm;
   }
 }
 
@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  margin-top: $spacing-lg;
+  margin-top: $spacing-sm;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   gap: $spacing-md;
-  min-width: 200px;
+  min-width: 240px;
 }
 
 .winMessage {
@@ -48,4 +48,17 @@
   font-size: 1.5rem;
   color: #2d5a27; // darker green
   font-weight: bold;
+}
+
+.liveRegion {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }

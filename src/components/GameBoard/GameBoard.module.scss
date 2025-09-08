@@ -6,9 +6,11 @@
   justify-content: center;
   align-items: center;
   margin: $spacing-md auto;
-  max-width: fit-content;
+  max-width: 100%;
 
   @media (max-width: $mobile) {
     gap: $spacing-xs;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    width: 100%;
   }
 }

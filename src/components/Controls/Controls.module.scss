@@ -4,13 +4,44 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  //flex-direction: column;
   margin: $spacing-md 0;
+  margin-top: -15px;
   flex-wrap: wrap;
   gap: $spacing-sm;
 
   @media (max-width: $mobile) {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+.easyControls {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+  margin-top: $spacing-sm;
+
+  @media (max-width: $tablet) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center !important;
+    gap: 19px;
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center !important;
+    gap: 19px;
   }
 }
 
@@ -22,9 +53,49 @@
 
 .bestScore {
   font-size: 1rem;
-  color: #2d5a27; // darker green
+  color: #2d5a27; 
 }
 
 .restartButton {
   @include button-style;
+}
+
+.resetBestScoreButton {
+  @include button-style;
+  background-color: #dc3545; 
+
+  &:hover {
+    background-color: #c82333;
+  }
+}
+
+.pauseResumeButton {
+  @include button-style;
+  background-color: #ffc107; 
+  color: #212529;
+
+  &:hover {
+    background-color: #e0a800;
+  }
+}
+
+.statistics {
+  font-size: 0.9rem;
+  color: #6c757d; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: $spacing-sm 0;
+}
+
+.soundToggleButton {
+  @include button-style;
+  background-color: transparent;
+  font-size: 1.2rem;
+  //width: fit-content;
+
+  &:hover {
+    background-color: #3c7734;
+  }
 }

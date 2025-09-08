@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './Card.module.scss';
 import { Card as CardType, Difficulty } from '../../types/game';
 
@@ -31,12 +32,13 @@ const Card: React.FC<CardProps> = ({ card, onClick, disabled, difficulty }) => {
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       tabIndex={disabled ? -1 : 0}
-      aria-label={`Card ${card.value}`}
+      role="button"
+      aria-label={`Memory card ${card.value.split('/').pop()?.split('.')[0] || 'unknown'}`}
     >
       <div className={styles.cardInner}>
         <div className={styles.cardBack}>?</div>
         <div className={styles.cardFront}>
-          <img src={card.value} alt="card" className={styles.cardImage} />
+          <Image src={card.value} alt="card" className={styles.cardImage} fill />
         </div>
       </div>
     </div>
