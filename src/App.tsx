@@ -159,6 +159,10 @@ const App: React.FC = () => {
 
   const handleCardClick = useCallback(
     (card: Card) => {
+      if (isPaused) {
+        setIsPaused(false);
+        start();
+      }
       setGameState((prev) => {
         if (
           prev.flippedCards.length === 2 ||
@@ -235,7 +239,7 @@ const App: React.FC = () => {
         };
       });
     },
-    [start, stop, updateBestScore, time, playCardFlip, playMatch, playNoMatch, playWin, soundEnabled, updateStatistics]
+    [isPaused, setIsPaused, start, stop, updateBestScore, time, playCardFlip, playMatch, playNoMatch, playWin, soundEnabled, updateStatistics]
   );
 
   const handleRestart = useCallback(() => {
