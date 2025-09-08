@@ -29,3 +29,7 @@ export const DIFFICULTY_CONFIG = {
   medium: { rows: 4, cols: 4 },
   hard: { rows: 6, cols: 6 },
 } as const;
+
+export interface WindowWithWebkit extends Window {
+  webkitAudioContext?: typeof AudioContext;
+}
