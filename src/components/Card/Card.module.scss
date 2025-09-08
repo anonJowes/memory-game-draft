@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .card {
   perspective: 1000px;
@@ -9,8 +9,9 @@
     transform: scale(1.05);
   }
 
-  &:focus {
+  &:focus-visible {
     outline: none;
+    box-shadow: 0 0 0 4px rgba(181, 137, 46, 0.6); /* yellowish brown */
   }
 
   &.easy {
